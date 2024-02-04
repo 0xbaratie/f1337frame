@@ -46,6 +46,6 @@ pnpm dev
 ## Great reference
 Our work is supported by the wonderful developers who have already implemented the Frames.
 
-https://github.com/Zizzamia/a-frame-in-100-lines
-https://github.com/thirdweb-dev/thirdweb-engine-farcaster-frame
-https://github.com/WillPapper/On-Chain-Cow-Farcaster-Frame
+- https://github.com/Zizzamia/a-frame-in-100-lines
+- https://github.com/thirdweb-dev/thirdweb-engine-farcaster-frame
+- https://github.com/WillPapper/On-Chain-Cow-Farcaster-Frame
