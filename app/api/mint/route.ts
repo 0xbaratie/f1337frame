@@ -1,6 +1,5 @@
 import { FrameRequest, getFrameAccountAddress, getFrameMessage } from '@coinbase/onchainkit';
 import { NextRequest, NextResponse } from 'next/server';
-import type { NextApiRequest, NextApiResponse } from "next";
 import { http, createWalletClient, createPublicClient } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { base } from "viem/chains";
@@ -78,6 +77,32 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     }
 
     const generatedNum =  Math.floor(Math.random() * 49);
+    const trustedData  = body.trustedData;
+    
+    const action = await Warpcast.validateMessage(trustedData.messageBytes);
+    
+    const hasRecasted = await Warpcast.hasRecasted(action.interactor.fid);
+    if (!hasRecasted) {
+      // Recast failure HTML Response
+      return new NextResponse(`<!DOCTYPE html><html><head>
+        <meta property="fc:frame" content="vNext" />
+        <meta property="fc:frame:image" content="https://i.gyazo.com/40a269363f416f28caff4f8d9601d670.gif" />
+        <meta property="fc:frame:button:1" content="Recast is required to stop" />
+        <meta property="fc:frame:post_url" content="https://f1337.vercel.app/" />
+      </head></html>`);
+    }
+
+    
+    const hasLiked = await Warpcast.hasLiked(action.interactor.fid);
+    if (!hasLiked) {
+      // Like failure HTML Response
+      return new NextResponse(`<!DOCTYPE html><html><head>
+        <meta property="fc:frame" content="vNext" />
+        <meta property="fc:frame:image" content="https://i.gyazo.com/40a269363f416f28caff4f8d9601d670.gif" />
+        <meta property="fc:frame:button:1" content="Like is required to stop" />
+        <meta property="fc:frame:post_url" content="https://f1337.vercel.app/" />
+      </head></html>`);
+    }
 
     const account = privateKeyToAccount(
       process.env.PRIVATE_KEY as `0x${string}`
