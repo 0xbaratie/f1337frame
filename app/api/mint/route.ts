@@ -72,7 +72,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content="https://i.gyazo.com/40a269363f416f28caff4f8d9601d670.gif" />
         <meta property="fc:frame:button:1" content="Connect your address with farcaster account" />
-        <meta property="fc:frame:post_url" content="https://f1337.vercel.app/" />
+        <meta property="fc:frame:post_url" content="${process.env['HOST']}" />
       </head></html>`);
     }
 
@@ -88,7 +88,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content="https://i.gyazo.com/40a269363f416f28caff4f8d9601d670.gif" />
         <meta property="fc:frame:button:1" content="Recast is required to stop" />
-        <meta property="fc:frame:post_url" content="https://f1337.vercel.app/" />
+        <meta property="fc:frame:post_url" content="${process.env['HOST']}" />
       </head></html>`);
     }
 
@@ -100,7 +100,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content="https://i.gyazo.com/40a269363f416f28caff4f8d9601d670.gif" />
         <meta property="fc:frame:button:1" content="Like is required to stop" />
-        <meta property="fc:frame:post_url" content="https://f1337.vercel.app/" />
+        <meta property="fc:frame:post_url" content="${process.env['HOST']}" />
       </head></html>`);
     }
 
@@ -140,17 +140,17 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       // Success HTML Response
       return new NextResponse(`<!DOCTYPE html><html><head>
         <meta property="fc:frame" content="vNext" />
-        <meta property="fc:frame:image" content="https://f1337.vercel.app/success/0.GIF" />
+        <meta property="fc:frame:image" content="${process.env['HOST']}/success/0.GIF" />
         <meta property="fc:frame:button:1" content="You are 1337" />
-        <meta property="fc:frame:post_url" content="https://f1337.vercel.app/" />
+        <meta property="fc:frame:post_url" content="${process.env['HOST']}/" />
       </head></html>`);
     } else {
       // Failure HTML Response
       return new NextResponse(`<!DOCTYPE html><html><head>
         <meta property="fc:frame" content="vNext" />
-        <meta property="fc:frame:image" content="https://f1337.vercel.app//failed/${generatedNum}.GIF" />
+        <meta property="fc:frame:image" content="${process.env['HOST']}//failed/${generatedNum}.GIF" />
         <meta property="fc:frame:button:1" content="You are not 1337 " />
-        <meta property="fc:frame:post_url" content="https://f1337.vercel.app/" />
+        <meta property="fc:frame:post_url" content="${process.env['HOST']}/" />
       </head></html>`);
     }
 
@@ -160,7 +160,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content="https://i.gyazo.com/40a269363f416f28caff4f8d9601d670.gif" />
         <meta property="fc:frame:button:1" content="Error" />
-        <meta property="fc:frame:post_url" content="https://f1337.vercel.app/" />
+        <meta property="fc:frame:post_url" content="${process.env['HOST']}/" />
       </head></html>`);
   }
 }

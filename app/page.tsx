@@ -8,30 +8,6 @@ type Props = {
     searchParams: { [key: string]: string | string[] | undefined }
 }
 
-// export async function generateMetadata(
-//     { params, searchParams }: Props,
-//     parent: ResolvingMetadata
-// ): Promise<Metadata> {
-//     const fcMetadata: Record<string, string> = {
-//         "fc:frame": "vNext",
-//         "fc:frame:post_url": `${process.env['HOST']}/api/mint`,
-//         "fc:frame:image": 'https://i.gyazo.com/40a269363f416f28caff4f8d9601d670.gif',
-//     };
-//     fcMetadata[`fc:frame:button:1`] = "Recast and click 👉 Mint";
-
-//     return {
-//         title: "f1337",
-//         openGraph: {
-//             title: "f1337",
-//             images: ['https://f1337.vercel.app/ogp.png'],
-//         },
-//         other: {
-//             ...fcMetadata,
-//         },
-//         metadataBase: new URL(process.env['HOST'] || '')
-//     }
-// }
-
 const frameMetadata = getFrameMetadata({
     buttons: [
         {
@@ -39,7 +15,7 @@ const frameMetadata = getFrameMetadata({
         },
     ],
     image: 'https://i.gyazo.com/40a269363f416f28caff4f8d9601d670.gif',
-    post_url: `https://f1337frame-test1.vercel.app/api/mint`,
+    post_url: `${process.env['HOST']}/api/mint`,
 });
 
 export const metadata: Metadata = {
