@@ -121,64 +121,30 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     
     if (resultString === "1337") {
       // Success HTML Response
-      return new NextResponse(`
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <title>You are 1337 - F1337</title>
-            <meta property="og:title" content="You are 1337">
-            <meta
-              property="og:image"
-              content="https://f1337.vercel.app/ogp.png"
-            />
-            <meta name="test:blockNumber" content="${blockNumber}">
-            <meta name="fc:frame" content="vNext">
-            <meta
-              property="fc:frame:image"
-              content="https://f1337.vercel.app/success/0.GIF"
-            />
-          </head>
-        </html>
-      `);
+      return new NextResponse(`<!DOCTYPE html><html><head>
+        <meta property="fc:frame" content="vNext" />
+        <meta property="fc:frame:image" content="https://f1337.vercel.app/success/0.GIF" />
+        <meta property="fc:frame:button:1" content="${blockNumber}" />
+        <meta property="fc:frame:post_url" content="https://f1337.vercel.app/" />
+      </head></html>`);
     } else {
       // Failure HTML Response
-      return new NextResponse(`
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <title>You are not 1337 - F1337</title>
-            <meta property="og:title" content="You are not 1337">
-            <meta
-              property="og:image"
-              content="https://f1337.vercel.app/ogp.png"
-            />
-            <meta name="test:blockNumber" content="${blockNumber}">
-            <meta name="fc:frame" content="vNext">
-            <meta
-              property="fc:frame:image"
-              content="https://f1337.vercel.app//failed/${generatedNum}.GIF"
-            />
-          </head>
-        </html>
-      `);
+      return new NextResponse(`<!DOCTYPE html><html><head>
+        <meta property="fc:frame" content="vNext" />
+        <meta property="fc:frame:image" content="https://f1337.vercel.app/success/0.GIF" />
+        <meta property="fc:frame:button:1" content="${blockNumber}" />
+        <meta property="fc:frame:post_url" content="https://f1337.vercel.app//failed/${generatedNum}.GIF" />
+      </head></html>`);
     }
 
   } catch (error) {
     console.error(error);
-    return new NextResponse(`
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <title>Error - F1337</title>
-            <meta property="og:title" content="Error">
-            <meta
-              property="og:image"
-              content="https://f1337.vercel.app/ogp.png"
-            />
-            <meta name="fc:frame" content="vNext">
-          </head>
-        </html>
-      `);
+    return new NextResponse(`<!DOCTYPE html><html><head>
+        <meta property="fc:frame" content="vNext" />
+        <meta property="fc:frame:image" content="https://i.gyazo.com/40a269363f416f28caff4f8d9601d670.gif" />
+        <meta property="fc:frame:button:1" content="Error" />
+        <meta property="fc:frame:post_url" content="https://f1337.vercel.app/" />
+      </head></html>`);
   }
 }
 
