@@ -148,7 +148,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       // Failure HTML Response
       return new NextResponse(`<!DOCTYPE html><html><head>
         <meta property="fc:frame" content="vNext" />
-        <meta property="fc:frame:image" content="${process.env['HOST']}//failed/${generatedNum}.GIF" />
+        <meta property="fc:frame:image" content="${process.env['HOST']}/failed/${generatedNum}.GIF" />
         <meta property="fc:frame:button:1" content="You are not 1337 " />
         <meta property="fc:frame:post_url" content="${process.env['HOST']}/" />
       </head></html>`);
