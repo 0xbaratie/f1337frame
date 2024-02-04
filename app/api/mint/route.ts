@@ -69,20 +69,12 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
     if (addressFromFid === null) {
       // Address not found, return a specific HTML response
-      return new NextResponse(`
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <title>Connect your address </title>
-            <meta property="og:title" content="You need to connect your address with farcaster account.">
-            <meta
-              property="og:image"
-              content="https://f1337.vercel.app/ogp.png"
-            />
-            <meta name="fc:frame" content="vNext">
-          </head>
-        </html>
-      `);
+      return new NextResponse(`<!DOCTYPE html><html><head>
+        <meta property="fc:frame" content="vNext" />
+        <meta property="fc:frame:image" content="https://f1337.vercel.app/ogp.png" />
+        <meta property="fc:frame:button:1" content="Connect your address with farcaster account" />
+        <meta property="fc:frame:post_url" content="https://f1337.vercel.app/" />
+      </head></html>`);
     }
 
     const generatedNum =  Math.floor(Math.random() * 49);
