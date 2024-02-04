@@ -71,7 +71,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       // Address not found, return a specific HTML response
       return new NextResponse(`<!DOCTYPE html><html><head>
         <meta property="fc:frame" content="vNext" />
-        <meta property="fc:frame:image" content="https://f1337.vercel.app/ogp.png" />
+        <meta property="fc:frame:image" content="https://i.gyazo.com/40a269363f416f28caff4f8d9601d670.gif" />
         <meta property="fc:frame:button:1" content="Connect your address with farcaster account" />
         <meta property="fc:frame:post_url" content="https://f1337.vercel.app/" />
       </head></html>`);
