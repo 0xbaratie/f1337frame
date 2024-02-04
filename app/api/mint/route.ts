@@ -124,16 +124,16 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       return new NextResponse(`<!DOCTYPE html><html><head>
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content="https://f1337.vercel.app/success/0.GIF" />
-        <meta property="fc:frame:button:1" content="${blockNumber}" />
+        <meta property="fc:frame:button:1" content="You are 1337" />
         <meta property="fc:frame:post_url" content="https://f1337.vercel.app/" />
       </head></html>`);
     } else {
       // Failure HTML Response
       return new NextResponse(`<!DOCTYPE html><html><head>
         <meta property="fc:frame" content="vNext" />
-        <meta property="fc:frame:image" content="https://f1337.vercel.app/success/0.GIF" />
-        <meta property="fc:frame:button:1" content="${blockNumber}" />
-        <meta property="fc:frame:post_url" content="https://f1337.vercel.app//failed/${generatedNum}.GIF" />
+        <meta property="fc:frame:image" content="https://f1337.vercel.app//failed/${generatedNum}.GIF" />
+        <meta property="fc:frame:button:1" content="You are not 1337 " />
+        <meta property="fc:frame:post_url" content="https://f1337.vercel.app/" />
       </head></html>`);
     }
 
