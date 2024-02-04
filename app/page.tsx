@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-// import RandomInterval from '../../data/RandomInterval';
 import React, { useState } from 'react';
 import { getFrameMetadata } from '@coinbase/onchainkit';
 
@@ -32,16 +31,31 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    // const [randomNumber, setRandomNumber] = useState('1337');
-    // const [counter, setCounter] = useState(1);
-
-    // RandomInterval(counter, setCounter, setRandomNumber);
 
     return(
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-            <h1 className="font-mincho text-xl mt-10 text-primary font-bold text-center">Are you 1337?</h1>
+            <h1 className="font-mincho text-3xl mt-10 text-primary font-bold text-center">F1337</h1>
             
-            {/* <p  className="mt-4 mb-6 text-6xl text-primary-text font-bold">{randomNumber}</p> */}
+            <div className="flex justify-center mt-8">
+                <a
+                href={`https://f1337.vercel.app/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-focus focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                >
+                <span>Play web version</span>
+                </a>
+            </div>
+
+
+            <footer className="flex items-center justify-center pt-10 m-12 bg-gray-100">
+                <nav className="flex flex-col items-center">
+                    <a href="https://github.com/0xbaratie/f1337" className="font-mincho link link-hover p-1" target="_blank" rel="noopener noreferrer">Github</a>
+                    <a href="https://twitter.com/0xBaratie" className="font-mincho link link-hover p-1" target="_blank" rel="noopener noreferrer">X</a>
+                </nav>
+            </footer>
+
+            
         </div>
     );
 
