@@ -24,45 +24,45 @@ export default async function handler(
   const { trustedData } = requestBodyWarpcastSchema.parse(req.body);
   const action = await Warpcast.validateMessage(trustedData.messageBytes);
 
-  // Conditions for recasting a post
-  const hasRecasted = await Warpcast.hasRecasted(action.interactor.fid);
-  if (!hasRecasted) {
-    res.setHeader("Content-Type", "text/html");
-    res.status(200).send(`
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <title>Recast is required to stop</title>
-          <meta property="og:title" content="You need to recast this post.">
-          <meta
-            property="og:image"
-            content="https://f1337.vercel.app/ogp.png"
-          />
-          <meta name="fc:frame" content="vNext">
-        </head>
-      </html>
-    `);
-  }
+  // // Conditions for recasting a post
+  // const hasRecasted = await Warpcast.hasRecasted(action.interactor.fid);
+  // if (!hasRecasted) {
+  //   res.setHeader("Content-Type", "text/html");
+  //   res.status(200).send(`
+  //     <!DOCTYPE html>
+  //     <html>
+  //       <head>
+  //         <title>Recast is required to stop</title>
+  //         <meta property="og:title" content="You need to recast this post.">
+  //         <meta
+  //           property="og:image"
+  //           content="https://f1337.vercel.app/ogp.png"
+  //         />
+  //         <meta name="fc:frame" content="vNext">
+  //       </head>
+  //     </html>
+  //   `);
+  // }
 
-  // Conditions for liking a post
-  const hasLiked = await Warpcast.hasLiked(action.interactor.fid);
-  if (!hasLiked) {
-    res.setHeader("Content-Type", "text/html");
-    res.status(200).send(`
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <title>Like is required to stop</title>
-          <meta property="og:title" content="You need to like this post..">
-          <meta
-            property="og:image"
-            content="https://f1337.vercel.app/ogp.png"
-          />
-          <meta name="fc:frame" content="vNext">
-        </head>
-      </html>
-    `);
-  }
+  // // Conditions for liking a post
+  // const hasLiked = await Warpcast.hasLiked(action.interactor.fid);
+  // if (!hasLiked) {
+  //   res.setHeader("Content-Type", "text/html");
+  //   res.status(200).send(`
+  //     <!DOCTYPE html>
+  //     <html>
+  //       <head>
+  //         <title>Like is required to stop</title>
+  //         <meta property="og:title" content="You need to like this post..">
+  //         <meta
+  //           property="og:image"
+  //           content="https://f1337.vercel.app/ogp.png"
+  //         />
+  //         <meta name="fc:frame" content="vNext">
+  //       </head>
+  //     </html>
+  //   `);
+  // }
 
 
   if (req.method === "POST") {
