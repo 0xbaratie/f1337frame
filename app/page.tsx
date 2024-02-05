@@ -10,7 +10,7 @@ type Props = {
 const frameMetadata = getFrameMetadata({
     buttons: [
         {
-        label: 'Recast and click 👉 Mint',
+        label: 'Recast and like 👉 Play',
         },
     ],
     image: 'https://i.gyazo.com/40a269363f416f28caff4f8d9601d670.gif',
