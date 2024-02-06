@@ -14,7 +14,7 @@ const frameMetadata = getFrameMetadata({
         },
     ],
     image: 'https://i.gyazo.com/40a269363f416f28caff4f8d9601d670.gif',
-    post_url: `${process.env['HOST']}/api/mint`,
+    post_url: `https://f1337frames.vercel.app/api/mint`,
 });
 
 export const metadata: Metadata = {
