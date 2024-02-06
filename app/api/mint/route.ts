@@ -102,7 +102,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         <meta property="fc:frame:button:1" content="Like is required to stop" />
         <meta property="fc:frame:post_url" content="${process.env['HOST']}" />
       </head></html>`);
-    // }
+    }
 
     const account = privateKeyToAccount(
       process.env.PRIVATE_KEY as `0x${string}`
